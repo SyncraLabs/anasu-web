@@ -24,8 +24,9 @@
   --grad:linear-gradient(120deg,#16466b 0%,#2e93a8 60%,#7fc4cf 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;overflow-x:hidden;max-width:100%;position:relative;-webkit-font-smoothing:antialiased}
+.strip,.hero{max-width:100%}
 h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.12;letter-spacing:.01em}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -251,17 +252,19 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
 
 /* ===== responsive ===== */
 @media(max-width:980px){
-  .hero .wrap{grid-template-columns:1fr;gap:2.5rem;padding:4.5rem 0 4rem;text-align:center}
+  .hero{min-height:0}
+  .hero .wrap{grid-template-columns:1fr;gap:2.6rem;padding:3rem 0 3.5rem;text-align:center}
   .hero-inner,.hero-visual{min-width:0;max-width:100%}
-  .hero-inner{max-width:640px;margin:0 auto}
-  .hero h1{font-size:clamp(2.3rem,8.5vw,3.2rem);overflow-wrap:break-word}
+  .hero-inner{max-width:640px;margin:0 auto;order:1}
+  .hero h1{font-size:clamp(2.2rem,9vw,3.2rem);overflow-wrap:break-word}
   .hero-eyebrow{justify-content:center}
   .hero h1 .ln,.hero h1 .ln i{display:inline;transform:none}
   .hero-cta,.hero-meta{justify-content:center}
   .hero-meta{margin-top:2.2rem}
-  .hero-visual{height:min(60vh,460px);max-width:440px;margin:0 auto;width:100%;order:-1}
-  .hero-visual .frame{border-radius:160px 160px 16px 16px}
-  .hero-visual .chip-float{left:8px}
+  .hero-visual{height:min(56vh,440px);max-width:420px;margin:0 auto;width:100%;order:2}
+  .hero-visual .frame{border-radius:150px 150px 16px 16px}
+  .hero-visual .chip-float{left:6px}
+  .scroll-ind{display:none}
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .about-imgs{height:440px;max-width:480px;margin:0 auto}
   .stats .wrap{grid-template-columns:1fr 1fr;gap:2.5rem}
