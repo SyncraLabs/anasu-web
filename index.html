@@ -72,20 +72,53 @@ header.scrolled .brand img{height:46px}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
 .burger span{width:26px;height:2px;background:var(--ink);transition:.3s;display:block}
 
-/* ===== hero ===== */
-.hero{min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:-2}
-.hero-bg img{width:100%;height:120%;object-fit:cover;will-change:transform}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(8,30,46,.86) 0%,rgba(13,43,64,.6) 45%,rgba(46,147,168,.35) 100%)}
-.hero .wrap{padding:7rem 0}
-.hero-inner{max-width:760px}
-.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:600;text-shadow:0 6px 30px rgba(0,0,0,.3)}
-.hero h1 em{font-style:italic;color:var(--teal-light);font-weight:500}
-.hero p{font-size:clamp(1.05rem,2vw,1.3rem);max-width:54ch;margin:1.6rem 0 2.4rem;color:#e8f1f5;font-weight:300}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
-.scroll-ind{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;opacity:.75;text-align:center}
-.scroll-ind .mouse{width:24px;height:38px;border:1.5px solid rgba(255,255,255,.6);border-radius:14px;margin:0 auto .6rem;position:relative}
-.scroll-ind .mouse::after{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;background:#fff;border-radius:2px;animation:wheel 1.6s infinite}
+/* ===== hero (editorial minimal) ===== */
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--paper);overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;top:-18%;right:-10%;width:48vw;height:48vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(127,196,207,.20),rgba(46,147,168,.06) 55%,transparent 72%);filter:blur(8px);z-index:0}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5.5rem);align-items:center;padding:6rem 0 5rem}
+.hero-inner{max-width:600px}
+.hero-eyebrow{display:flex;align-items:center;gap:.9rem;font-family:'Jost';text-transform:uppercase;letter-spacing:.28em;font-size:.7rem;font-weight:500;color:var(--teal);margin-bottom:1.6rem}
+.hero-eyebrow::before{content:'';width:46px;height:1px;background:var(--teal);display:inline-block}
+.hero h1{font-size:clamp(3rem,6.4vw,5.8rem);font-weight:500;color:var(--ink);letter-spacing:-.01em;line-height:1.04}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln i{display:inline-block;font-style:normal;transform:translateY(110%);transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.hero.lit h1 .ln:nth-child(1) i{transition-delay:.15s}
+.hero.lit h1 .ln:nth-child(2) i{transition-delay:.3s}
+.hero.lit h1 .ln i{transform:translateY(0)}
+.hero h1 em{font-style:italic;font-weight:500;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:clamp(1rem,1.4vw,1.15rem);max-width:46ch;margin:1.8rem 0 2.4rem;color:var(--grey);font-weight:300;opacity:0;transform:translateY(20px);transition:.9s ease .55s}
+.hero.lit p{opacity:1;transform:none}
+.hero-cta{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center;opacity:0;transform:translateY(20px);transition:.9s ease .7s}
+.hero.lit .hero-cta{opacity:1;transform:none}
+.link-cta{display:inline-flex;align-items:center;gap:.55em;font-size:.92rem;letter-spacing:.04em;color:var(--ink);position:relative;padding-bottom:4px}
+.link-cta::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--ink);transform-origin:right;transition:transform .4s}
+.link-cta:hover::after{transform:scaleX(0)}
+.link-cta .arrow{transition:transform .4s}
+.link-cta:hover .arrow{transform:translateX(5px)}
+.hero-meta{display:flex;gap:2.4rem;margin-top:3rem;opacity:0;transition:.9s ease .85s}
+.hero.lit .hero-meta{opacity:1}
+.hero-meta div b{font-family:'Cormorant Garamond';font-size:1.7rem;color:var(--ink);display:block;line-height:1}
+.hero-meta div small{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.hero-meta .vline{width:1px;background:var(--line)}
+/* visual */
+.hero-visual{position:relative;height:min(78vh,640px)}
+.hero-visual .frame{position:absolute;inset:0;border-radius:200px 200px 18px 18px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(13,43,64,.5);clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1) .25s}
+.hero.lit .hero-visual .frame{clip-path:inset(0 0 0 0)}
+.hero-visual .frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.6s cubic-bezier(.16,1,.3,1) .25s;will-change:transform}
+.hero.lit .hero-visual .frame img{transform:scale(1)}
+.hero-visual .chip-float{position:absolute;left:-26px;bottom:14%;z-index:3;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.6);border-radius:16px;padding:1rem 1.3rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:.8rem;opacity:0;transform:translateY(16px);transition:.8s ease 1s}
+.hero.lit .hero-visual .chip-float{opacity:1;transform:none}
+.hero-visual .chip-float .st{display:flex;flex-direction:column}
+.hero-visual .chip-float .st b{font-family:'Cormorant Garamond';font-size:1.5rem;color:var(--teal);line-height:1}
+.hero-visual .chip-float .st small{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.hero-visual .chip-float .stars{color:var(--gold);font-size:.85rem;letter-spacing:2px}
+.hero-visual .ring{position:absolute;top:-22px;right:24px;width:84px;height:84px;z-index:3;animation:spin 18s linear infinite}
+.hero-visual .ring svg{width:100%;height:100%}
+.hero-visual .ring text{font-family:'Jost';font-size:8.4px;letter-spacing:2.4px;fill:var(--blue);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-ind{position:absolute;bottom:24px;left:0;right:0;margin:0 auto;width:max-content;z-index:2;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);text-align:center;opacity:.8}
+.scroll-ind .mouse{width:22px;height:36px;border:1.5px solid var(--line);border-radius:14px;margin:0 auto .6rem;position:relative}
+.scroll-ind .mouse::after{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;background:var(--teal);border-radius:2px;animation:wheel 1.6s infinite}
 @keyframes wheel{0%{opacity:1;top:7px}70%{opacity:0;top:18px}100%{opacity:0}}
 
 /* marquee strip */
@@ -218,6 +251,17 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
 
 /* ===== responsive ===== */
 @media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:2.5rem;padding:4.5rem 0 4rem;text-align:center}
+  .hero-inner,.hero-visual{min-width:0;max-width:100%}
+  .hero-inner{max-width:640px;margin:0 auto}
+  .hero h1{font-size:clamp(2.3rem,8.5vw,3.2rem);overflow-wrap:break-word}
+  .hero-eyebrow{justify-content:center}
+  .hero h1 .ln,.hero h1 .ln i{display:inline;transform:none}
+  .hero-cta,.hero-meta{justify-content:center}
+  .hero-meta{margin-top:2.2rem}
+  .hero-visual{height:min(60vh,460px);max-width:440px;margin:0 auto;width:100%;order:-1}
+  .hero-visual .frame{border-radius:160px 160px 16px 16px}
+  .hero-visual .chip-float{left:8px}
   .about-grid{grid-template-columns:1fr;gap:3rem}
   .about-imgs{height:440px;max-width:480px;margin:0 auto}
   .stats .wrap{grid-template-columns:1fr 1fr;gap:2.5rem}
@@ -236,11 +280,16 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
   .topbar .wrap{justify-content:center}
   .sec{padding:4.5rem 0}
   .about,.cta-band{padding:4.5rem 0}
+  .hero-meta{gap:1.4rem}
+  .hero-visual .ring{display:none}
 }
 @media(max-width:520px){
   .stats .wrap{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.6rem,11vw,3.4rem)}
+  .hero-meta div b{font-size:1.4rem}
+  .hero-visual{height:54vh}
 }
 </style>
 </head>
@@ -284,15 +333,33 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-bg"><img src="img/masaje-mujer.jpg" alt="Masaje relajante en ANASU" id="heroImg"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <span class="eyebrow" style="color:var(--teal-light)">Masaje y Estética Avanzada · Pilar de la Horadada</span>
-      <h1>Manos que te miman,<br><em>piel que sueña</em></h1>
-      <p>Un santuario de bienestar donde los masajes, los rituales y la última tecnología estética se unen para cuidar tu cuerpo y renovar tu piel. Experiencias 100% personalizadas con primeras marcas.</p>
+      <span class="hero-eyebrow">Masaje &amp; Estética Avanzada</span>
+      <h1>
+        <span class="ln"><i>Manos que te miman,</i></span>
+        <span class="ln"><i><em>piel que sueña</em></i></span>
+      </h1>
+      <p>Un santuario de bienestar en Pilar de la Horadada donde el cuidado manual y la última tecnología estética se unen para renovar tu cuerpo y tu piel.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=+34615435417&text=Hola%20quisiera%20reservar%20una%20cita%20en%20ANASU" target="_blank" rel="noopener">Reserva tu experiencia</a>
-        <a class="btn btn-light" href="#masajes">Ver tratamientos</a>
+        <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=+34615435417&text=Hola%20quisiera%20reservar%20una%20cita%20en%20ANASU" target="_blank" rel="noopener">Reservar cita</a>
+        <a class="link-cta" href="#masajes">Ver tratamientos <span class="arrow">→</span></a>
+      </div>
+      <div class="hero-meta">
+        <div><b>+40</b><small>Tratamientos</small></div>
+        <div class="vline"></div>
+        <div><b>+15</b><small>Tecnologías</small></div>
+        <div class="vline"></div>
+        <div><b>100%</b><small>Personalizado</small></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame"><img src="img/masaje-mujer.jpg" alt="Experiencia de masaje en ANASU" id="heroImg"></div>
+      <div class="ring">
+        <svg viewBox="0 0 100 100"><defs><path id="circlePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><text><textPath href="#circlePath">· RESERVA · TU · MOMENTO · DE · CALMA </textPath></text></svg>
+      </div>
+      <div class="chip-float">
+        <div class="st"><span class="stars">★★★★★</span><small>Experiencia premium</small></div>
       </div>
     </div>
   </div>
@@ -641,9 +708,9 @@ const cio=new IntersectionObserver((entries)=>{
 },{threshold:.5});
 counters.forEach(c=>cio.observe(c));
 
-// hero parallax
-const heroImg=document.getElementById('heroImg');
-addEventListener('scroll',()=>{const y=scrollY;if(y<window.innerHeight)heroImg.style.transform='translateY('+y*0.18+'px)';});
+// hero intro animation
+const hero=document.querySelector('.hero');
+requestAnimationFrame(()=>requestAnimationFrame(()=>hero.classList.add('lit')));
 
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
