@@ -5,23 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANASU · Masaje y Estética Avanzada | Pilar de la Horadada</title>
 <meta name="description" content="ANASU Masaje y Estética Avanzada en Pilar de la Horadada (Alicante). Masajes, rituales, tratamientos faciales y corporales, depilación láser y la última tecnología estética. Manos que te miman, piel que sueña.">
+<meta name="theme-color" content="#3c4135">
+<meta name="author" content="ANASU Masaje y Estética Avanzada">
+<meta name="robots" content="index,follow">
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="ANASU · Masaje y Estética Avanzada | Pilar de la Horadada">
+<meta property="og:description" content="Tu santuario de bienestar en Pilar de la Horadada. Masajes, rituales y la última tecnología en estética avanzada.">
+<meta property="og:image" content="img/masaje-mujer.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0d2b40;
-  --blue:#16466b;
-  --teal:#2e93a8;
-  --teal-light:#7fc4cf;
-  --gold:#c9a35e;
-  --cream:#f7f3ec;
-  --paper:#fbfaf7;
-  --grey:#6b7884;
-  --line:rgba(22,70,107,.12);
-  --shadow:0 24px 60px -28px rgba(13,43,64,.45);
-  --grad:linear-gradient(120deg,#16466b 0%,#2e93a8 60%,#7fc4cf 100%);
+  --ink:#3a3c33;
+  --blue:#5d6b50;
+  --teal:#7f8c68;
+  --teal-light:#c3cdb2;
+  --gold:#c08a64;
+  --cream:#efe9dd;
+  --paper:#faf6ee;
+  --grey:#8a877a;
+  --line:rgba(93,107,80,.14);
+  --shadow:0 24px 60px -30px rgba(58,60,51,.38);
+  --grad:linear-gradient(120deg,#5d6b50 0%,#7f8c68 58%,#a7b48d 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
@@ -31,7 +41,12 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 section{position:relative}
+section[id]{scroll-margin-top:84px}
 .wrap{width:min(1200px,92vw);margin:0 auto}
+@media(max-width:760px){.wrap{width:min(1200px,90vw)}}
+@media(max-width:420px){.wrap{width:min(1200px,88vw)}}
+/* accessible focus */
+a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
 .eyebrow{font-family:'Jost';text-transform:uppercase;letter-spacing:.32em;font-size:.72rem;font-weight:500;color:var(--teal);margin-bottom:1rem;display:inline-block}
 .title{font-size:clamp(2.1rem,5vw,3.6rem);color:var(--ink)}
 .title em{font-style:italic;color:var(--teal);font-weight:500}
@@ -41,15 +56,15 @@ section{position:relative}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.6em;font-family:'Jost';font-weight:500;letter-spacing:.04em;font-size:.92rem;padding:.95em 2em;border-radius:50px;cursor:pointer;border:1px solid transparent;transition:.35s cubic-bezier(.2,.7,.3,1);position:relative;overflow:hidden}
-.btn-primary{background:var(--grad);color:#fff;box-shadow:0 14px 30px -12px rgba(46,147,168,.7)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(46,147,168,.85)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 14px 30px -12px rgba(127,140,104,.6)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(127,140,104,.75)}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .btn-light{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.4);backdrop-filter:blur(6px)}
 .btn-light:hover{background:#fff;color:var(--ink)}
 
 /* ===== top bar ===== */
-.topbar{background:var(--ink);color:#d7e4ec;font-size:.8rem;letter-spacing:.05em}
+.topbar{background:var(--ink);color:#dcdccd;font-size:.8rem;letter-spacing:.05em}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem 0;flex-wrap:wrap}
 .topbar a{transition:.3s;opacity:.85}
 .topbar a:hover{opacity:1;color:var(--teal-light)}
@@ -70,12 +85,15 @@ header.scrolled .brand img{height:46px}
 .navlinks a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--grad);transition:.35s}
 .navlinks a:hover::after{width:100%}
 .navlinks .btn{padding:.7em 1.5em;font-size:.85rem}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:10px;margin:-4px}
 .burger span{width:26px;height:2px;background:var(--ink);transition:.3s;display:block}
+.nav-overlay{position:fixed;inset:0;background:rgba(44,46,38,.45);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.4s;z-index:99}
+.nav-overlay.show{opacity:1;visibility:visible}
+body.nav-open{overflow:hidden}
 
 /* ===== hero (editorial minimal) ===== */
 .hero{min-height:100vh;display:flex;align-items:center;background:var(--paper);overflow:hidden;position:relative}
-.hero::before{content:'';position:absolute;top:-18%;right:-10%;width:48vw;height:48vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(127,196,207,.20),rgba(46,147,168,.06) 55%,transparent 72%);filter:blur(8px);z-index:0}
+.hero::before{content:'';position:absolute;top:-18%;right:-10%;width:48vw;height:48vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(167,180,141,.26),rgba(127,140,104,.06) 55%,transparent 72%);filter:blur(8px);z-index:0}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5.5rem);align-items:center;padding:6rem 0 5rem}
 .hero-inner{max-width:600px}
 .hero-eyebrow{display:flex;align-items:center;gap:.9rem;font-family:'Jost';text-transform:uppercase;letter-spacing:.28em;font-size:.7rem;font-weight:500;color:var(--teal);margin-bottom:1.6rem}
@@ -123,7 +141,7 @@ header.scrolled .brand img{height:46px}
 @keyframes wheel{0%{opacity:1;top:7px}70%{opacity:0;top:18px}100%{opacity:0}}
 
 /* marquee strip */
-.strip{background:var(--ink);color:#cfe0e9;overflow:hidden;padding:1rem 0}
+.strip{background:var(--ink);color:#d6d8c3;overflow:hidden;padding:1rem 0}
 .strip-track{display:flex;gap:3.5rem;white-space:nowrap;animation:scrollx 32s linear infinite;width:max-content}
 .strip-track span{font-family:'Cormorant Garamond';font-style:italic;font-size:1.4rem;display:flex;align-items:center;gap:3.5rem}
 .strip-track span::before{content:'✦';color:var(--teal);font-style:normal;font-size:.9rem}
@@ -141,7 +159,7 @@ header.scrolled .brand img{height:46px}
 .about-imgs .badge small{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
 .feature-list{margin-top:2rem;display:grid;gap:1.1rem}
 .feature{display:flex;gap:1rem;align-items:flex-start}
-.feature .ic{flex:0 0 44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(46,147,168,.15),rgba(22,70,107,.12));display:grid;place-items:center;color:var(--teal);font-size:1.2rem}
+.feature .ic{flex:0 0 44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(127,140,104,.18),rgba(93,107,80,.12));display:grid;place-items:center;color:var(--teal);font-size:1.2rem}
 .feature h4{font-size:1.3rem;margin-bottom:.1rem}
 .feature p{color:var(--grey);font-size:.92rem;line-height:1.5}
 
@@ -197,17 +215,17 @@ header.scrolled .brand img{height:46px}
 .promo{position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow)}
 .promo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s}
 .promo:hover img{transform:scale(1.06)}
-.promo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,30,46,.92) 0%,rgba(8,30,46,.35) 55%,transparent 100%)}
+.promo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,42,34,.93) 0%,rgba(40,42,34,.34) 55%,transparent 100%)}
 .promo-txt{position:relative;z-index:2;padding:2.2rem}
-.promo .tag{display:inline-block;background:var(--gold);color:#1a1207;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.35em 1em;border-radius:50px;margin-bottom:.9rem}
+.promo .tag{display:inline-block;background:var(--gold);color:#2c1d10;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.35em 1em;border-radius:50px;margin-bottom:.9rem}
 .promo h3{font-size:2rem;color:#fff}
-.promo p{font-size:.95rem;color:#dce8ee;margin:.5rem 0 1.2rem;max-width:42ch}
+.promo p{font-size:.95rem;color:#e7e6d7;margin:.5rem 0 1.2rem;max-width:42ch}
 
 /* ===== tech ===== */
 .tech{background:var(--ink);color:#fff}
-.tech .lead{color:#bcd0db}
+.tech .lead{color:#c8cab5}
 .chips{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.5rem;justify-content:center}
-.chip{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);padding:.7em 1.3em;border-radius:50px;font-size:.84rem;letter-spacing:.05em;transition:.35s;color:#dce8ee}
+.chip{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);padding:.7em 1.3em;border-radius:50px;font-size:.84rem;letter-spacing:.05em;transition:.35s;color:#dcdccd}
 .chip:hover{background:var(--grad);border-color:transparent;transform:translateY(-3px)}
 
 /* ===== contact ===== */
@@ -223,10 +241,10 @@ header.scrolled .brand img{height:46px}
 
 .cta-band{background:var(--grad);color:#fff;text-align:center;padding:5rem 0}
 .cta-band h2{font-size:clamp(2rem,5vw,3.4rem)}
-.cta-band p{max-width:50ch;margin:1rem auto 2rem;color:#eaf4f7}
+.cta-band p{max-width:50ch;margin:1rem auto 2rem;color:#f0efe2}
 
 /* ===== footer ===== */
-footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
+footer{background:#2c2f26;color:#b3b3a4;padding:4.5rem 0 2rem;font-size:.9rem}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem;margin-bottom:3rem}
 .foot-grid h4{color:#fff;font-size:1.3rem;margin-bottom:1.1rem}
 .foot-grid a{display:block;padding:.3rem 0;transition:.3s}
@@ -256,9 +274,11 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
   .hero .wrap{grid-template-columns:1fr;gap:2.6rem;padding:3rem 0 3.5rem;text-align:center}
   .hero-inner,.hero-visual{min-width:0;max-width:100%}
   .hero-inner{max-width:640px;margin:0 auto;order:1}
-  .hero h1{font-size:clamp(2.2rem,9vw,3.2rem);overflow-wrap:break-word}
+  .hero h1{font-size:clamp(2rem,7.6vw,3rem);overflow-wrap:break-word;hyphens:none}
   .hero-eyebrow{justify-content:center}
-  .hero h1 .ln,.hero h1 .ln i{display:inline;transform:none}
+  .hero h1 .ln{display:block;overflow:visible}
+  .hero h1 .ln,.hero h1 .ln i{transform:none}
+  .hero h1 .ln i{display:block}
   .hero-cta,.hero-meta{justify-content:center}
   .hero-meta{margin-top:2.2rem}
   .hero-visual{height:min(56vh,440px);max-width:420px;margin:0 auto;width:100%;order:2}
@@ -273,26 +293,59 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:760px){
-  .navlinks{position:fixed;top:0;bottom:0;right:0;width:min(80vw,320px);max-width:100vw;background:var(--paper);flex-direction:column;justify-content:center;gap:1.6rem;transform:translateX(101%);visibility:hidden;transition:transform .45s,visibility .45s;box-shadow:-20px 0 40px -20px rgba(13,43,64,.4);padding:2rem}
+  .navlinks{position:fixed;top:0;bottom:0;right:0;width:min(82vw,330px);max-width:100vw;background:var(--paper);flex-direction:column;justify-content:center;align-items:stretch;gap:.4rem;transform:translateX(101%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.3,1),visibility .45s;box-shadow:-20px 0 40px -20px rgba(13,43,64,.4);padding:5rem 1.8rem 2rem;overflow-y:auto}
   .navlinks.open{transform:none;visibility:visible}
+  .navlinks a{font-size:1.05rem;padding:.85rem .4rem;border-bottom:1px solid var(--line)}
+  .navlinks a::after{display:none}
+  .navlinks .btn{margin-top:1rem;justify-content:center;padding:1em 1.5em;font-size:.95rem;border-bottom:none}
   .burger{display:flex;z-index:101}
+  .burger.x span{background:var(--ink)}
   .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .burger.x span:nth-child(2){opacity:0}
   .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .topbar .tb-left{display:none}
-  .topbar .wrap{justify-content:center}
+  /* keep the phone tappable, drop the rest */
+  .topbar .tb-left a[href^="mailto"],.topbar .tb-left span{display:none}
+  .topbar .tb-left{gap:0}
+  .topbar .wrap{justify-content:space-between}
+  .topbar{font-size:.78rem}
   .sec{padding:4.5rem 0}
   .about,.cta-band{padding:4.5rem 0}
-  .hero-meta{gap:1.4rem}
+  .hero-meta{gap:1.2rem 1.6rem}
   .hero-visual .ring{display:none}
+  .btn{padding:.95em 1.6em}
 }
 @media(max-width:520px){
-  .stats .wrap{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr;gap:2rem}
+  .foot-grid{grid-template-columns:1fr;gap:2rem}
   .grid{grid-template-columns:1fr}
-  .hero h1{font-size:clamp(2.6rem,11vw,3.4rem)}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.8rem)}
+  .hero p{margin:1.4rem auto 2rem}
+  .hero-cta{flex-direction:column;width:100%}
+  .hero-cta .btn{width:100%;justify-content:center}
   .hero-meta div b{font-size:1.4rem}
-  .hero-visual{height:54vh}
+  .hero-visual{height:min(58vh,380px);max-width:340px}
+  /* about: keep stacked images on-screen, no overflow */
+  .about-imgs{height:auto;display:grid;grid-template-columns:1fr;gap:1rem;max-width:100%}
+  .about-imgs img{position:static;width:100%!important;height:auto!important;aspect-ratio:4/3}
+  .about-imgs .a2{display:none}
+  .about-imgs .badge{position:static;display:inline-flex;flex-direction:column;align-items:center;width:max-content;margin:0 auto}
+  .pricelist{padding:1.6rem 1.4rem}
+  .promo-txt{padding:1.6rem}
+  .promo h3{font-size:1.6rem}
+  .cta-band .btn,.cinfo .btn{width:100%;justify-content:center}
+  .sec-head{margin-bottom:2.4rem}
+}
+@media(max-width:380px){
+  .hero h1{font-size:clamp(1.8rem,7.4vw,2.6rem)}
+  .hero-meta div b{font-size:1.25rem}
+  .topbar .tb-right{gap:.7rem}
+}
+
+/* reduce motion for accessibility */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero h1 .ln i,.hero p,.hero-cta,.hero-meta,.hero-visual .frame,.hero-visual .frame img,.hero-visual .chip-float{opacity:1!important;transform:none!important;clip-path:none!important}
 }
 </style>
 </head>
@@ -329,10 +382,11 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
         <a href="#promos">Promociones</a>
         <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=+34615435417&text=Hola%20quisiera%20reservar%20una%20cita%20en%20ANASU" target="_blank" rel="noopener">Reservar cita</a>
       </div>
-      <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
+<div class="nav-overlay" id="navOverlay"></div>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -357,10 +411,7 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
       </div>
     </div>
     <div class="hero-visual">
-      <div class="frame"><img src="img/masaje-mujer.jpg" alt="Experiencia de masaje en ANASU" id="heroImg"></div>
-      <div class="ring">
-        <svg viewBox="0 0 100 100"><defs><path id="circlePath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><text><textPath href="#circlePath">· RESERVA · TU · MOMENTO · DE · CALMA </textPath></text></svg>
-      </div>
+      <div class="frame"><img src="img/masaje-mujer.jpg" alt="Experiencia de masaje en ANASU" id="heroImg" fetchpriority="high" decoding="async"></div>
       <div class="chip-float">
         <div class="st"><span class="stars">★★★★★</span><small>Experiencia premium</small></div>
       </div>
@@ -381,8 +432,8 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
 <section class="about" id="nosotros">
   <div class="wrap about-grid">
     <div class="about-imgs reveal">
-      <img class="a1" src="img/interior.jpg" alt="Interior de ANASU">
-      <img class="a2" src="img/velas.jpg" alt="Velas aromáticas">
+      <img class="a1" loading="lazy" decoding="async" src="img/interior.jpg" alt="Interior de ANASU">
+      <img class="a2" loading="lazy" decoding="async" src="img/velas.jpg" alt="Velas aromáticas">
       <div class="badge"><b>+15</b><small>Tecnologías estéticas</small></div>
     </div>
     <div>
@@ -425,30 +476,30 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
     <!-- Masajes -->
     <div class="panel active" id="masajes-p">
       <div class="grid">
-        <article class="card reveal"><div class="card-img"><img src="img/masaje-mujer.jpg" alt="Masaje Especial Anasu"></div><div class="card-body"><h3>Masaje Especial Anasu</h3><p>Nuestro masaje insignia: una técnica exclusiva que combina maniobras relajantes y descontracturantes para una desconexión total.</p><div class="price"><span class="amt">50€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/aromaterapia.jpg" alt="Masaje Aromaterapia"></div><div class="card-body"><h3>Aromaterapia</h3><p>Masaje envolvente con cata de 3 aceites esenciales que armonizan cuerpo y mente a través del poder de los aromas.</p><div class="price"><span class="amt">55€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/masaje-espalda.jpg" alt="Masaje Muscular"></div><div class="card-body"><h3>Masaje Muscular</h3><p>Trabajo profundo sobre la musculatura para aliviar contracturas, sobrecargas y tensión acumulada.</p><div class="price"><span class="from">desde</span><span class="amt">35€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/masaje-piedra.jpg" alt="Drenaje Linfático"></div><div class="card-body"><h3>Drenaje Linfático</h3><p>Maniobras suaves y rítmicas que activan la circulación linfática, reducen la retención de líquidos y depuran el organismo.</p><div class="price"><span class="amt">45€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/masaje-cabeza.jpg" alt="Masaje Post-Competición"></div><div class="card-body"><h3>Post-Competición</h3><p>Recuperación deportiva para descargar la musculatura tras el esfuerzo y favorecer una óptima regeneración.</p><div class="price"><span class="from">desde</span><span class="amt">40€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/masaje-spa-mujer.jpg" alt="Masaje Craneofacial"></div><div class="card-body"><h3>Craneofacial</h3><p>Masaje de cabeza, cara y cuello que libera el estrés, alivia las cefaleas y aporta una profunda sensación de calma.</p><div class="price"><span class="amt">50€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/masaje-pareja.jpg" alt="Masaje Tailandés"></div><div class="card-body"><h3>Masaje Tailandés</h3><p>Antigua técnica oriental de estiramientos y presiones que devuelve la energía, la flexibilidad y la vitalidad.</p><div class="price"><span class="amt">85€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/buda.jpg" alt="Reflexología"></div><div class="card-body"><h3>Reflexología Podal</h3><p>Estimulación de los puntos reflejos del pie para equilibrar todo el cuerpo y promover el bienestar general.</p><div class="price"><span class="amt">30€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/estatuas.jpg" alt="Lodo marino, presoterapia"></div><div class="card-body"><h3>Lodo Marino · Presoterapia</h3><p>Tratamientos complementarios: el poder remineralizante del lodo marino y la presoterapia para piernas ligeras.</p><div class="price"><span class="from">desde</span><span class="amt">30€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-mujer.jpg" alt="Masaje Especial Anasu"></div><div class="card-body"><h3>Masaje Especial Anasu</h3><p>Nuestro masaje insignia: una técnica exclusiva que combina maniobras relajantes y descontracturantes para una desconexión total.</p><div class="price"><span class="amt">50€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/aromaterapia.jpg" alt="Masaje Aromaterapia"></div><div class="card-body"><h3>Aromaterapia</h3><p>Masaje envolvente con cata de 3 aceites esenciales que armonizan cuerpo y mente a través del poder de los aromas.</p><div class="price"><span class="amt">55€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-espalda.jpg" alt="Masaje Muscular"></div><div class="card-body"><h3>Masaje Muscular</h3><p>Trabajo profundo sobre la musculatura para aliviar contracturas, sobrecargas y tensión acumulada.</p><div class="price"><span class="from">desde</span><span class="amt">35€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-piedra.jpg" alt="Drenaje Linfático"></div><div class="card-body"><h3>Drenaje Linfático</h3><p>Maniobras suaves y rítmicas que activan la circulación linfática, reducen la retención de líquidos y depuran el organismo.</p><div class="price"><span class="amt">45€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-cabeza.jpg" alt="Masaje Post-Competición"></div><div class="card-body"><h3>Post-Competición</h3><p>Recuperación deportiva para descargar la musculatura tras el esfuerzo y favorecer una óptima regeneración.</p><div class="price"><span class="from">desde</span><span class="amt">40€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-spa-mujer.jpg" alt="Masaje Craneofacial"></div><div class="card-body"><h3>Craneofacial</h3><p>Masaje de cabeza, cara y cuello que libera el estrés, alivia las cefaleas y aporta una profunda sensación de calma.</p><div class="price"><span class="amt">50€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-pareja.jpg" alt="Masaje Tailandés"></div><div class="card-body"><h3>Masaje Tailandés</h3><p>Antigua técnica oriental de estiramientos y presiones que devuelve la energía, la flexibilidad y la vitalidad.</p><div class="price"><span class="amt">85€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/buda.jpg" alt="Reflexología"></div><div class="card-body"><h3>Reflexología Podal</h3><p>Estimulación de los puntos reflejos del pie para equilibrar todo el cuerpo y promover el bienestar general.</p><div class="price"><span class="amt">30€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/estatuas.jpg" alt="Lodo marino, presoterapia"></div><div class="card-body"><h3>Lodo Marino · Presoterapia</h3><p>Tratamientos complementarios: el poder remineralizante del lodo marino y la presoterapia para piernas ligeras.</p><div class="price"><span class="from">desde</span><span class="amt">30€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
       </div>
     </div>
 
     <!-- Rituales -->
     <div class="panel" id="rituales-p">
       <div class="grid">
-        <article class="card reveal"><div class="card-img"><img src="img/velas.jpg" alt="Ritual Mediterráneo"></div><div class="card-body"><h3>Ritual Mediterráneo</h3><p>Masaje relajante, presoterapia y facial express. La esencia del relax mediterráneo en una sola sesión.</p><div class="price"><span class="amt">75€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/estatuas.jpg" alt="Ritual Indian"></div><div class="card-body"><h3>Ritual Indian</h3><p>Un viaje exótico de inspiración hindú con aceite de kukui, flores y sal del Himalaya. Sentidos en plenitud.</p><div class="price"><a class="book" href="#contacto">Consultar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/masaje-piedra.jpg" alt="Ritual de Candelas"></div><div class="card-body"><h3>Candelas · Piedras Volcánicas</h3><p>Masaje con velas de aceite de karité, miel o té verde y el calor envolvente de las piedras volcánicas.</p><div class="price"><span class="amt">75€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/masaje-spa-mujer.jpg" alt="Ritual Oriental"></div><div class="card-body"><h3>Ritual Oriental</h3><p>Peeling, envoltura, facial express y masaje. Una ceremonia completa de renovación de pies a cabeza.</p><div class="price"><span class="amt">80€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/buda.jpg" alt="Ritual Emperador Aguas de Torrevieja"></div><div class="card-body"><h3>Emperador · Aguas de Torrevieja</h3><p>Mini masaje, envoltura de algas y thermo sauna. El lujo mineral del Mediterráneo para tu piel.</p><div class="price"><span class="amt">80€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/interior.jpg" alt="Ritual Detox"></div><div class="card-body"><h3>Ritual Detox</h3><p>Spa de hidrolinfa, pedicura, masaje y maquillaje. Depura, relaja y reluce en una experiencia integral.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/mascara-verde.jpg" alt="Ritual Resplandor Divino"></div><div class="card-body"><h3>Resplandor Divino</h3><p>Diagnóstico de piel con efecto lifting y fototerapia para un rostro radiante y rejuvenecido.</p><div class="price"><span class="amt">85€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/img1.jpg" alt="Ritual Resplandor Supremo"></div><div class="card-body"><h3>Resplandor Supremo</h3><p>Diagnóstico 4D, hydrafacial, mascarilla, fototerapia, masaje facial y de pies y presoterapia. La experiencia más completa.</p><div class="price"><span class="amt">250€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/img3.jpg" alt="Ritual Recupera tu Piel"></div><div class="card-body"><h3>Recupera tu Piel</h3><p>Diagnóstico 4D, limpieza facial, fototerapia e Indiba. Recupera la salud y la luminosidad de tu rostro.</p><div class="price"><span class="amt">130€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/velas.jpg" alt="Ritual Mediterráneo"></div><div class="card-body"><h3>Ritual Mediterráneo</h3><p>Masaje relajante, presoterapia y facial express. La esencia del relax mediterráneo en una sola sesión.</p><div class="price"><span class="amt">75€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/estatuas.jpg" alt="Ritual Indian"></div><div class="card-body"><h3>Ritual Indian</h3><p>Un viaje exótico de inspiración hindú con aceite de kukui, flores y sal del Himalaya. Sentidos en plenitud.</p><div class="price"><a class="book" href="#contacto">Consultar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-piedra.jpg" alt="Ritual de Candelas"></div><div class="card-body"><h3>Candelas · Piedras Volcánicas</h3><p>Masaje con velas de aceite de karité, miel o té verde y el calor envolvente de las piedras volcánicas.</p><div class="price"><span class="amt">75€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-spa-mujer.jpg" alt="Ritual Oriental"></div><div class="card-body"><h3>Ritual Oriental</h3><p>Peeling, envoltura, facial express y masaje. Una ceremonia completa de renovación de pies a cabeza.</p><div class="price"><span class="amt">80€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/buda.jpg" alt="Ritual Emperador Aguas de Torrevieja"></div><div class="card-body"><h3>Emperador · Aguas de Torrevieja</h3><p>Mini masaje, envoltura de algas y thermo sauna. El lujo mineral del Mediterráneo para tu piel.</p><div class="price"><span class="amt">80€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/interior.jpg" alt="Ritual Detox"></div><div class="card-body"><h3>Ritual Detox</h3><p>Spa de hidrolinfa, pedicura, masaje y maquillaje. Depura, relaja y reluce en una experiencia integral.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/mascara-verde.jpg" alt="Ritual Resplandor Divino"></div><div class="card-body"><h3>Resplandor Divino</h3><p>Diagnóstico de piel con efecto lifting y fototerapia para un rostro radiante y rejuvenecido.</p><div class="price"><span class="amt">85€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/img1.jpg" alt="Ritual Resplandor Supremo"></div><div class="card-body"><h3>Resplandor Supremo</h3><p>Diagnóstico 4D, hydrafacial, mascarilla, fototerapia, masaje facial y de pies y presoterapia. La experiencia más completa.</p><div class="price"><span class="amt">250€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/img3.jpg" alt="Ritual Recupera tu Piel"></div><div class="card-body"><h3>Recupera tu Piel</h3><p>Diagnóstico 4D, limpieza facial, fototerapia e Indiba. Recupera la salud y la luminosidad de tu rostro.</p><div class="price"><span class="amt">130€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
       </div>
     </div>
     <p class="center reveal" style="margin-top:2rem;color:var(--grey);font-size:.9rem">Y muchos más rituales: Balance, Ángel Luxury Skin, Multivitaminas, Hydrafacial Nature y Antiedad. <a href="https://api.whatsapp.com/send?phone=+34615435417&text=Hola%20quisiera%20información%20sobre%20los%20rituales" target="_blank" rel="noopener" style="color:var(--teal);border-bottom:1px solid var(--teal)">Consúltanos por WhatsApp</a></p>
@@ -473,30 +524,30 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
     <!-- Facial -->
     <div class="panel active" id="facial-p">
       <div class="grid">
-        <article class="card reveal"><div class="card-img"><img src="img/img1.jpg" alt="Hydrafacial"></div><div class="card-body"><h3>Hydrafacial</h3><p>Limpieza facial profunda a base de sueros hidratantes y calmantes. Piel limpia, luminosa y revitalizada.</p><div class="price"><span class="amt">85€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/mascara-verde.jpg" alt="Dermapen / Electropen"></div><div class="card-body"><h3>Dermapen / Electropen</h3><p>Hilos líquidos, bótox, ácido hialurónico, vitamina C y multivitaminas para una piel firme y rejuvenecida.</p><div class="price"><span class="amt">140€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/img4.jpg" alt="BB Glow"></div><div class="card-body"><h3>BB Glow</h3><p>Maquillaje semipermanente que elimina imperfecciones y arrugas para un efecto buena cara duradero.</p><div class="price"><span class="amt">140€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/img5.jpg" alt="Hollywood Lips"></div><div class="card-body"><h3>Hollywood Lips</h3><p>Restaura el color natural e hidrata tus labios para una sonrisa más bonita y cuidada.</p><div class="price"><span class="amt">140€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/img3.jpg" alt="Oxigenoterapia"></div><div class="card-body"><h3>Oxigenoterapia</h3><p>Rejuvenecimiento facial hidratante indicado para arrugas y acné. Oxígeno puro para tu piel.</p><div class="price"><span class="amt">90€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/img2.jpg" alt="Indiba facial"></div><div class="card-body"><h3>Indiba · Radiofrecuencia</h3><p>Radiofrecuencia facial y corporal que reafirma, redensifica y devuelve la juventud a la piel.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/img4.jpg" alt="IPL Rejuvenecimiento"></div><div class="card-body"><h3>Rejuvenecimiento IPL</h3><p>Luz pulsada que aumenta la elastina y el colágeno de tu piel para un rostro más firme y uniforme.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/img5.jpg" alt="Ácido Hialurónico"></div><div class="card-body"><h3>Ácido Hialurónico</h3><p>Volumen e hidratación en labios y retoque del surco nasogeniano. Resultados naturales y armónicos.</p><div class="price"><span class="amt">180€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/mascara-verde.jpg" alt="Lash Lift y Magic Threads"></div><div class="card-body"><h3>Lash Lift · Magic Threads</h3><p>Eleva y da volumen a tus pestañas (35€) e hilos de colágeno que rellenan arrugas y rejuvenecen el rostro.</p><div class="price"><span class="from">desde</span><span class="amt">35€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/img1.jpg" alt="Hydrafacial"></div><div class="card-body"><h3>Hydrafacial</h3><p>Limpieza facial profunda a base de sueros hidratantes y calmantes. Piel limpia, luminosa y revitalizada.</p><div class="price"><span class="amt">85€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/mascara-verde.jpg" alt="Dermapen / Electropen"></div><div class="card-body"><h3>Dermapen / Electropen</h3><p>Hilos líquidos, bótox, ácido hialurónico, vitamina C y multivitaminas para una piel firme y rejuvenecida.</p><div class="price"><span class="amt">140€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/img4.jpg" alt="BB Glow"></div><div class="card-body"><h3>BB Glow</h3><p>Maquillaje semipermanente que elimina imperfecciones y arrugas para un efecto buena cara duradero.</p><div class="price"><span class="amt">140€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/img5.jpg" alt="Hollywood Lips"></div><div class="card-body"><h3>Hollywood Lips</h3><p>Restaura el color natural e hidrata tus labios para una sonrisa más bonita y cuidada.</p><div class="price"><span class="amt">140€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/img3.jpg" alt="Oxigenoterapia"></div><div class="card-body"><h3>Oxigenoterapia</h3><p>Rejuvenecimiento facial hidratante indicado para arrugas y acné. Oxígeno puro para tu piel.</p><div class="price"><span class="amt">90€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/img2.jpg" alt="Indiba facial"></div><div class="card-body"><h3>Indiba · Radiofrecuencia</h3><p>Radiofrecuencia facial y corporal que reafirma, redensifica y devuelve la juventud a la piel.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/img4.jpg" alt="IPL Rejuvenecimiento"></div><div class="card-body"><h3>Rejuvenecimiento IPL</h3><p>Luz pulsada que aumenta la elastina y el colágeno de tu piel para un rostro más firme y uniforme.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/img5.jpg" alt="Ácido Hialurónico"></div><div class="card-body"><h3>Ácido Hialurónico</h3><p>Volumen e hidratación en labios y retoque del surco nasogeniano. Resultados naturales y armónicos.</p><div class="price"><span class="amt">180€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/mascara-verde.jpg" alt="Lash Lift y Magic Threads"></div><div class="card-body"><h3>Lash Lift · Magic Threads</h3><p>Eleva y da volumen a tus pestañas (35€) e hilos de colágeno que rellenan arrugas y rejuvenecen el rostro.</p><div class="price"><span class="from">desde</span><span class="amt">35€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
       </div>
     </div>
 
     <!-- Corporal -->
     <div class="panel" id="corporal-p">
       <div class="grid">
-        <article class="card reveal"><div class="card-img"><img src="img/img7.jpg" alt="HIFU 7D"></div><div class="card-body"><h3>HIFU 7D</h3><p>Ultrasonido de alta intensidad que regenera la zona tratada: elimina arrugas de expresión, flacidez y grasa no deseada (facial y corporal).</p><div class="price"><span class="from">desde</span><span class="amt">250€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/img7.jpg" alt="Liposonix"></div><div class="card-body"><h3>Liposonix</h3><p>Remodelación corporal no invasiva con ultrasonidos térmicos. Elimina grasa y recupera elasticidad y firmeza.</p><div class="price"><span class="amt">190€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/img7.jpg" alt="Cavitación"></div><div class="card-body"><h3>Cavitación</h3><p>Eliminación de grasa localizada mediante ultrasonido. Adelgaza y reduce volumen de forma indolora.</p><div class="price"><span class="amt">60€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/img7.jpg" alt="Vacumterapia"></div><div class="card-body"><h3>Vacumterapia</h3><p>Tratamiento anticelulítico no invasivo que mejora la textura de la piel y reactiva la circulación.</p><div class="price"><span class="amt">60€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/img7.jpg" alt="Radiofrecuencia"></div><div class="card-body"><h3>Radiofrecuencia (RF)</h3><p>Mejora la circulación y la elasticidad de la piel, reafirmando y combatiendo la flacidez.</p><div class="price"><span class="amt">60€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/img7.jpg" alt="VacuSlim"></div><div class="card-body"><h3>VacuSlim</h3><p>Remodelación corporal al vacío: no invasiva, relajante e indolora. Silueta más definida sesión a sesión.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal"><div class="card-img"><img src="img/img7.jpg" alt="Piel de Naranja"></div><div class="card-body"><h3>Piel de Naranja</h3><p>Tratamiento lipolítico para eliminar la grasa corporal localizada y alisar la temida piel de naranja.</p><div class="price"><span class="amt">90€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
-        <article class="card reveal d1"><div class="card-img"><img src="img/img4.jpg" alt="EMS Sculpt"></div><div class="card-body"><h3>EMS · Sculpt</h3><p>Tu personal trainer estético: esculpe músculo y reduce grasa con electroestimulación de alta potencia.</p><div class="price"><a class="book" href="#contacto">Consultar →</a></div></div></article>
-        <article class="card reveal d2"><div class="card-img"><img src="img/img4.jpg" alt="Tixel y láseres"></div><div class="card-body"><h3>Tixel · Láser Nd-YAG · Azul</h3><p>Tecnología láser para estrías, melasma, ojeras, cicatrices, tatuajes, manchas, verrugas y rejuvenecimiento.</p><div class="price"><a class="book" href="#contacto">Consultar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/img8.jpg" alt="HIFU 7D"></div><div class="card-body"><h3>HIFU 7D</h3><p>Ultrasonido de alta intensidad que regenera la zona tratada: elimina arrugas de expresión, flacidez y grasa no deseada (facial y corporal).</p><div class="price"><span class="from">desde</span><span class="amt">250€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/img7.jpg" alt="Liposonix"></div><div class="card-body"><h3>Liposonix</h3><p>Remodelación corporal no invasiva con ultrasonidos térmicos. Elimina grasa y recupera elasticidad y firmeza.</p><div class="price"><span class="amt">190€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-espalda.jpg" alt="Cavitación"></div><div class="card-body"><h3>Cavitación</h3><p>Eliminación de grasa localizada mediante ultrasonido. Adelgaza y reduce volumen de forma indolora.</p><div class="price"><span class="amt">60€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/img6.jpg" alt="Vacumterapia"></div><div class="card-body"><h3>Vacumterapia</h3><p>Tratamiento anticelulítico no invasivo que mejora la textura de la piel y reactiva la circulación.</p><div class="price"><span class="amt">60€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/img2.jpg" alt="Radiofrecuencia"></div><div class="card-body"><h3>Radiofrecuencia (RF)</h3><p>Mejora la circulación y la elasticidad de la piel, reafirmando y combatiendo la flacidez.</p><div class="price"><span class="amt">60€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/masaje-piedra.jpg" alt="VacuSlim"></div><div class="card-body"><h3>VacuSlim</h3><p>Remodelación corporal al vacío: no invasiva, relajante e indolora. Silueta más definida sesión a sesión.</p><div class="price"><span class="amt">70€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal"><div class="card-img"><img loading="lazy" decoding="async" src="img/img5.jpg" alt="Piel de Naranja"></div><div class="card-body"><h3>Piel de Naranja</h3><p>Tratamiento lipolítico para eliminar la grasa corporal localizada y alisar la temida piel de naranja.</p><div class="price"><span class="amt">90€</span><a class="book" href="#contacto">Reservar →</a></div></div></article>
+        <article class="card reveal d1"><div class="card-img"><img loading="lazy" decoding="async" src="img/img4.jpg" alt="EMS Sculpt"></div><div class="card-body"><h3>EMS · Sculpt</h3><p>Tu personal trainer estético: esculpe músculo y reduce grasa con electroestimulación de alta potencia.</p><div class="price"><a class="book" href="#contacto">Consultar →</a></div></div></article>
+        <article class="card reveal d2"><div class="card-img"><img loading="lazy" decoding="async" src="img/img7.jpg" alt="Tixel y láseres"></div><div class="card-body"><h3>Tixel · Láser Nd-YAG · Azul</h3><p>Tecnología láser para estrías, melasma, ojeras, cicatrices, tatuajes, manchas, verrugas y rejuvenecimiento.</p><div class="price"><a class="book" href="#contacto">Consultar →</a></div></div></article>
       </div>
     </div>
 
@@ -554,7 +605,7 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
     </div>
     <div class="promo-grid">
       <article class="promo reveal">
-        <img src="img/img7.jpg" alt="Oferta Liposonix 2x1">
+        <img loading="lazy" decoding="async" src="img/img7.jpg" alt="Oferta Liposonix 2x1">
         <div class="promo-txt">
           <span class="tag">2x1 Exclusivo</span>
           <h3>¡Oferta Liposonix!</h3>
@@ -563,7 +614,7 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
         </div>
       </article>
       <article class="promo reveal d1">
-        <img src="img/promo2.jpg" alt="Promoción nuevos clientes">
+        <img loading="lazy" decoding="async" src="img/promo2.jpg" alt="Promoción nuevos clientes">
         <div class="promo-txt">
           <span class="tag">Nuevos clientes</span>
           <h3>Masaje Relajante desde 30€</h3>
@@ -625,7 +676,7 @@ footer{background:#081e2e;color:#9fb6c4;padding:4.5rem 0 2rem;font-size:.9rem}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="img/logo.jpg" alt="ANASU">
+        <img loading="lazy" decoding="async" src="img/logo.jpg" alt="ANASU">
         <p>Masaje y Estética Avanzada. Manos que te miman, piel que sueña. Tu santuario de bienestar en Pilar de la Horadada.</p>
         <div class="socials">
           <a href="https://www.instagram.com/anasumasajesyestetica/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.97.24 2.67.5.72.28 1.33.65 1.94 1.27.62.61.99 1.22 1.27 1.94.26.7.45 1.5.5 2.67.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.17-.24 1.97-.5 2.67a5.4 5.4 0 0 1-1.27 1.94 5.4 5.4 0 0 1-1.94 1.27c-.7.26-1.5.45-2.67.5-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.17-.05-1.97-.24-2.67-.5a5.4 5.4 0 0 1-1.94-1.27 5.4 5.4 0 0 1-1.27-1.94c-.26-.7-.45-1.5-.5-2.67C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.17.24-1.97.5-2.67.28-.72.65-1.33 1.27-1.94A5.4 5.4 0 0 1 5.98 2.77c.7-.26 1.5-.45 2.67-.5C9.95 2.2 10.35 2.2 12 2.2zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 9.49 3.2 9.86 3.2 13s.01 3.51.07 4.75c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.51 4.01 15.14 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 17a4.94 4.94 0 0 1 0-9.88zm0 8.14A3.2 3.2 0 1 0 12 8.8a3.2 3.2 0 0 0 0 6.4zm6.3-8.34a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></a>
@@ -673,9 +724,19 @@ const header=document.getElementById('header');
 addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
 
 // mobile menu
-const burger=document.getElementById('burger'),nav=document.getElementById('nav');
-burger.addEventListener('click',()=>{nav.classList.toggle('open');burger.classList.toggle('x');});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');burger.classList.remove('x');}));
+const burger=document.getElementById('burger'),nav=document.getElementById('nav'),overlay=document.getElementById('navOverlay');
+function setMenu(open){
+  nav.classList.toggle('open',open);
+  burger.classList.toggle('x',open);
+  overlay.classList.toggle('show',open);
+  document.body.classList.toggle('nav-open',open);
+  burger.setAttribute('aria-expanded',open);
+  burger.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+}
+burger.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
+overlay.addEventListener('click',()=>setMenu(false));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open'))setMenu(false);});
 
 // tabs
 document.querySelectorAll('.tabs').forEach(group=>{
