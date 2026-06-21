@@ -21,16 +21,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#3a3c33;
+  --ink:#1f3d4d;
   --blue:#26566f;
   --teal:#2f8b9c;
   --teal-light:#9ccdd4;
-  --gold:#c08a64;
-  --cream:#efe9dd;
-  --paper:#faf6ee;
-  --grey:#8a877a;
-  --line:rgba(47,139,156,.14);
-  --shadow:0 24px 60px -30px rgba(58,60,51,.38);
+  --gold:#c79a6a;
+  --cream:#e7eef0;
+  --paper:#f4f8f8;
+  --grey:#5f7480;
+  --line:rgba(38,86,111,.13);
+  --shadow:0 24px 60px -30px rgba(20,45,60,.4);
   --grad:linear-gradient(120deg,#26566f 0%,#2f8b9c 58%,#79b9c2 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -64,7 +64,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .btn-light:hover{background:#fff;color:var(--ink)}
 
 /* ===== top bar ===== */
-.topbar{background:var(--ink);color:#dcdccd;font-size:.8rem;letter-spacing:.05em}
+.topbar{background:var(--ink);color:#cddadf;font-size:.8rem;letter-spacing:.05em}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem 0;flex-wrap:wrap}
 .topbar a{transition:.3s;opacity:.85}
 .topbar a:hover{opacity:1;color:var(--teal-light)}
@@ -87,7 +87,7 @@ header.scrolled .brand img{height:46px}
 .navlinks .btn{padding:.7em 1.5em;font-size:.85rem}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:10px;margin:-4px}
 .burger span{width:26px;height:2px;background:var(--ink);transition:.3s;display:block}
-.nav-overlay{position:fixed;inset:0;background:rgba(44,46,38,.45);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.4s;z-index:99}
+.nav-overlay{position:fixed;inset:0;background:rgba(20,40,50,.5);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.4s;z-index:99}
 .nav-overlay.show{opacity:1;visibility:visible}
 body.nav-open{overflow:hidden}
 
@@ -141,7 +141,7 @@ body.nav-open{overflow:hidden}
 @keyframes wheel{0%{opacity:1;top:7px}70%{opacity:0;top:18px}100%{opacity:0}}
 
 /* marquee strip */
-.strip{background:var(--ink);color:#d6d8c3;overflow:hidden;padding:1rem 0}
+.strip{background:var(--ink);color:#c3d4d9;overflow:hidden;padding:1rem 0}
 .strip-track{display:flex;gap:3.5rem;white-space:nowrap;animation:scrollx 32s linear infinite;width:max-content}
 .strip-track span{font-family:'Cormorant Garamond';font-style:italic;font-size:1.4rem;display:flex;align-items:center;gap:3.5rem}
 .strip-track span::before{content:'✦';color:var(--teal);font-style:normal;font-size:.9rem}
@@ -215,17 +215,17 @@ body.nav-open{overflow:hidden}
 .promo{position:relative;border-radius:20px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow)}
 .promo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s}
 .promo:hover img{transform:scale(1.06)}
-.promo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,42,34,.93) 0%,rgba(40,42,34,.34) 55%,transparent 100%)}
+.promo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,36,46,.93) 0%,rgba(16,36,46,.34) 55%,transparent 100%)}
 .promo-txt{position:relative;z-index:2;padding:2.2rem}
 .promo .tag{display:inline-block;background:var(--gold);color:#2c1d10;font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:.35em 1em;border-radius:50px;margin-bottom:.9rem}
 .promo h3{font-size:2rem;color:#fff}
-.promo p{font-size:.95rem;color:#e7e6d7;margin:.5rem 0 1.2rem;max-width:42ch}
+.promo p{font-size:.95rem;color:#dde7ea;margin:.5rem 0 1.2rem;max-width:42ch}
 
 /* ===== tech ===== */
 .tech{background:var(--ink);color:#fff}
-.tech .lead{color:#c8cab5}
+.tech .lead{color:#bcd0d6}
 .chips{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.5rem;justify-content:center}
-.chip{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);padding:.7em 1.3em;border-radius:50px;font-size:.84rem;letter-spacing:.05em;transition:.35s;color:#dcdccd}
+.chip{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);padding:.7em 1.3em;border-radius:50px;font-size:.84rem;letter-spacing:.05em;transition:.35s;color:#cfdde1}
 .chip:hover{background:var(--grad);border-color:transparent;transform:translateY(-3px)}
 
 /* ===== contact ===== */
@@ -241,15 +241,15 @@ body.nav-open{overflow:hidden}
 
 .cta-band{background:var(--grad);color:#fff;text-align:center;padding:5rem 0}
 .cta-band h2{font-size:clamp(2rem,5vw,3.4rem)}
-.cta-band p{max-width:50ch;margin:1rem auto 2rem;color:#f0efe2}
+.cta-band p{max-width:50ch;margin:1rem auto 2rem;color:#e6f1f3}
 
 /* ===== footer ===== */
-footer{background:#2c2f26;color:#b3b3a4;padding:4.5rem 0 2rem;font-size:.9rem}
+footer{background:#16323f;color:#9fb4bd;padding:4.5rem 0 2rem;font-size:.9rem}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem;margin-bottom:3rem}
 .foot-grid h4{color:#fff;font-size:1.3rem;margin-bottom:1.1rem}
 .foot-grid a{display:block;padding:.3rem 0;transition:.3s}
 .foot-grid a:hover{color:var(--teal-light);padding-left:5px}
-.foot-brand img{height:70px;margin-bottom:1rem}
+.foot-brand img{height:84px;margin-bottom:1rem;filter:brightness(0) invert(1);opacity:.92}
 .foot-brand p{max-width:34ch;line-height:1.6}
 .socials{display:flex;gap:.7rem;margin-top:1.2rem}
 .socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;transition:.35s}
@@ -293,12 +293,16 @@ footer{background:#2c2f26;color:#b3b3a4;padding:4.5rem 0 2rem;font-size:.9rem}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:760px){
-  .navlinks{position:fixed;top:0;bottom:0;right:0;width:min(82vw,330px);max-width:100vw;background:var(--paper);flex-direction:column;justify-content:center;align-items:stretch;gap:.4rem;transform:translateX(101%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.3,1),visibility .45s;box-shadow:-20px 0 40px -20px rgba(13,43,64,.4);padding:5rem 1.8rem 2rem;overflow-y:auto}
+  /* drop blur so the fixed menu escapes the header box and fills the screen */
+  header{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--paper)}
+  .navlinks{position:fixed;inset:0;width:100%;max-width:100%;background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:.1rem;transform:translateX(100%);visibility:hidden;transition:transform .45s cubic-bezier(.2,.7,.3,1),visibility .45s;padding:5.5rem 1.8rem 3rem;overflow-y:auto}
   .navlinks.open{transform:none;visibility:visible}
-  .navlinks a{font-size:1.05rem;padding:.85rem .4rem;border-bottom:1px solid var(--line)}
+  .navlinks a{font-size:1.18rem;letter-spacing:.03em;padding:1rem .5rem;width:100%;max-width:320px;text-align:center;border-bottom:1px solid var(--line)}
   .navlinks a::after{display:none}
-  .navlinks .btn{margin-top:1rem;justify-content:center;padding:1em 1.5em;font-size:.95rem;border-bottom:none}
-  .burger{display:flex;z-index:101}
+  .navlinks .btn{margin-top:1.6rem;justify-content:center;padding:1.05em 2em;font-size:1rem;border-bottom:none;width:100%;max-width:320px}
+  .burger{display:flex;z-index:101;position:relative}
+  /* when the full-screen menu is open, pin the close (X) to a safe top-right spot */
+  body.nav-open .burger{position:fixed;top:.9rem;right:1.1rem;z-index:1500}
   .burger.x span{background:var(--ink)}
   .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .burger.x span:nth-child(2){opacity:0}
@@ -371,7 +375,7 @@ footer{background:#2c2f26;color:#b3b3a4;padding:4.5rem 0 2rem;font-size:.9rem}
   <div class="wrap">
     <nav>
       <a class="brand" href="#inicio">
-        <img src="img/logo.jpg" alt="ANASU Masaje y Estética Avanzada">
+        <img src="img/logo.png" alt="ANASU Masaje y Estética Avanzada">
         <span style="display:none"></span>
       </a>
       <div class="navlinks" id="nav">
@@ -676,7 +680,7 @@ footer{background:#2c2f26;color:#b3b3a4;padding:4.5rem 0 2rem;font-size:.9rem}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img loading="lazy" decoding="async" src="img/logo.jpg" alt="ANASU">
+        <img loading="lazy" decoding="async" src="img/logo.png" alt="ANASU">
         <p>Masaje y Estética Avanzada. Manos que te miman, piel que sueña. Tu santuario de bienestar en Pilar de la Horadada.</p>
         <div class="socials">
           <a href="https://www.instagram.com/anasumasajesyestetica/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.97.24 2.67.5.72.28 1.33.65 1.94 1.27.62.61.99 1.22 1.27 1.94.26.7.45 1.5.5 2.67.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.17-.24 1.97-.5 2.67a5.4 5.4 0 0 1-1.27 1.94 5.4 5.4 0 0 1-1.94 1.27c-.7.26-1.5.45-2.67.5-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.17-.05-1.97-.24-2.67-.5a5.4 5.4 0 0 1-1.94-1.27 5.4 5.4 0 0 1-1.27-1.94c-.26-.7-.45-1.5-.5-2.67C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.17.24-1.97.5-2.67.28-.72.65-1.33 1.27-1.94A5.4 5.4 0 0 1 5.98 2.77c.7-.26 1.5-.45 2.67-.5C9.95 2.2 10.35 2.2 12 2.2zm0 1.8c-3.14 0-3.51.01-4.75.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.21 9.49 3.2 9.86 3.2 13s.01 3.51.07 4.75c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.51 4.01 15.14 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 17a4.94 4.94 0 0 1 0-9.88zm0 8.14A3.2 3.2 0 1 0 12 8.8a3.2 3.2 0 0 0 0 6.4zm6.3-8.34a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></a>
